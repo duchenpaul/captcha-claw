@@ -1,0 +1,71 @@
+{
+    "providers": {
+        "openai": {
+            "baseUrl": "https://api.openai.com/v1",
+            "apiKey": "sk-your-openai-api-key-here",
+            "api": "openai-completions",
+            "models": [
+                {
+                    "id": "gpt-4o",
+                    "name": "GPT-4o",
+                    "reasoning": false,
+                    "input": [
+                        "text",
+                        "image"
+                    ],
+                    "cost": {
+                        "input": 2.5,
+                        "output": 10,
+                        "cacheRead": 1.25,
+                        "cacheWrite": 1.25
+                    },
+                    "contextWindow": 128000,
+                    "maxTokens": 16384
+                },
+                {
+                    "id": "gpt-4o-mini",
+                    "name": "GPT-4o Mini",
+                    "reasoning": false,
+                    "input": [
+                        "text",
+                        "image"
+                    ],
+                    "cost": {
+                        "input": 0.15,
+                        "output": 0.6,
+                        "cacheRead": 0.075,
+                        "cacheWrite": 0.075
+                    },
+                    "contextWindow": 128000,
+                    "maxTokens": 16384
+                }
+            ]
+        },
+        "ollama": {
+            "baseUrl": "http://localhost:11434",
+            "api": "ollama",
+            "models": [
+                {
+                    "id": "llava",
+                    "name": "LLaVA (Vision)",
+                    "input": [
+                        "text",
+                        "image"
+                    ]
+                }
+            ]
+        },
+        "baidu-ocr": {
+            "baseUrl": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic",
+            "clientId": "YOUR-BAIDU-CLIENT-ID",
+            "clientSecret": "YOUR-BAIDU-CLIENT-SECRET",
+            "api": "baidu-ocr",
+            "models": [
+                {
+                    "id": "accurate_basic",
+                    "name": "Baidu Accurate OCR"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,33 @@
+# Chrome Extension
+*.crx
+*.pem
+*.zip
+
+# Icons (until finalized)
+icons/*.png
+!icons/icon16.png
+!icons/icon48.png
+!icons/icon128.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Config files with real API keys (use .example files instead)
+config.local.json
+secrets.json
