@@ -268,3 +268,13 @@ function showUrlMessage(text, type) {
     urlMessage.classList.remove("show");
   }, 5000);
 }
+
+// Load example config into Reference Schema section
+fetch(chrome.runtime.getURL("config.example.json"))
+  .then((r) => r.text())
+  .then((text) => {
+    document.getElementById("exampleConfigPre").textContent = text.trim();
+  })
+  .catch(() => {
+    document.getElementById("exampleConfigPre").textContent = "Failed to load example config.";
+  });

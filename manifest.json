@@ -37,5 +37,15 @@
     "options_page": "options.html",
     "action": {
         "default_title": "Captcha Claw Options"
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "config.example.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
 }
