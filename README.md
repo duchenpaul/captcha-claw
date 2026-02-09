@@ -1,4 +1,8 @@
-# 🦞 Captcha Claw
+<p align="center" width="100%">
+    <img src="icons/icon128.png">
+</p>
+
+# Captcha Claw
 
 A powerful Chrome extension that uses OpenAI API to solve CAPTCHAs with a simple right-click.
 
