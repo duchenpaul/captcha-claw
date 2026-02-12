@@ -4,7 +4,7 @@
 
 # Captcha Claw
 
-A powerful Chrome extension that uses OpenAI API to solve CAPTCHAs with a simple right-click.
+A powerful [Chrome extension](https://chromewebstore.google.com/detail/captcha-claw/ahkmpdpifbekhmkfkhoeikjjggblemha) that uses OpenAI API to solve CAPTCHAs with a simple right-click.
 
 ## Features
 
