@@ -1,0 +1,36 @@
+name: Publish to Chrome Web Store
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Package & Publish Chrome Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Google Chrome
+        run: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Write private key
+        run: echo "${{ secrets.EXTENSION_PEM }}" > extension.pem
+
+      - name: Pack extension with Chrome
+        run: |
+          google-chrome \
+            --pack-extension=${{ github.workspace }} \
+            --pack-extension-key=${{ github.workspace }}/extension.pem
+
+      - name: show file tree
+        run: |
+          tree ${{ github.workspace }}/..
