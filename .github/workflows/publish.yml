@@ -43,3 +43,13 @@ jobs:
           name: chrome-extension-${{ github.sha }}
           path: |
             /home/runner/work/captcha-claw/captcha-claw.crx
+
+      - name: Publish to Chrome Web Store
+        uses: mobilefirstllc/cws-publish@latest
+        with:
+          action: "upload"
+          client_id: ${{ secrets.CLIENT_ID }}
+          client_secret: ${{ secrets.CLIENT_SECRET }}
+          refresh_token: ${{ secrets.REFRESH_TOKEN }}
+          extension_id: ${{ vars.EXTENSION_ID }}
+          zip_file: "/home/runner/work/captcha-claw/captcha-claw.crx"
