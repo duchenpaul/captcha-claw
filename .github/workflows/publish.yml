@@ -35,4 +35,4 @@ jobs:
 
       - name: show file tree
         run: |
-          tree ${{ github.workspace }}/..
+          tree -f /home/runner/work/captcha-claw
