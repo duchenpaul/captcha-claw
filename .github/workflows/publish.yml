@@ -24,14 +24,14 @@ jobs:
 
       - name: Write private key
         run: |
-          mkdir -p ${{ github.workspace }}/../secrets
-          echo "${{ secrets.EXTENSION_PEM }}" > ${{ github.workspace }}/../secrets/extension.pem
+          mkdir -p /home/runner/work/captcha-claw/secrets
+          echo "${{ secrets.EXTENSION_PEM }}" > /home/runner/work/captcha-claw/secrets/extension.pem
 
       - name: Pack extension with Chrome
         run: |
           google-chrome \
             --pack-extension=${{ github.workspace }} \
-            --pack-extension-key=${{ github.workspace }}/../secrets/extension.pem
+            --pack-extension-key=/home/runner/work/captcha-claw/secrets/extension.pem
 
       - name: show file tree
         run: |
