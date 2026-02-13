@@ -23,13 +23,15 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Write private key
-        run: echo "${{ secrets.EXTENSION_PEM }}" > extension.pem
+        run: |
+          mkdir -p ${{ github.workspace }}/../secrets
+          echo "${{ secrets.EXTENSION_PEM }}" > ${{ github.workspace }}/../secrets/extension.pem
 
       - name: Pack extension with Chrome
         run: |
           google-chrome \
             --pack-extension=${{ github.workspace }} \
-            --pack-extension-key=${{ github.workspace }}/extension.pem
+            --pack-extension-key=${{ github.workspace }}/../secrets/extension.pem
 
       - name: show file tree
         run: |
