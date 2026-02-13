@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Captcha Claw",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Solve CAPTCHAs using OpenAI API, Ollama, and Baidu OCR with a simple right-click.",
     "icons": {
         "16": "icons/icon16.png",
